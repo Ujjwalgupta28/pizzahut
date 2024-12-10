@@ -1,0 +1,60 @@
+
+    {% include "head.html"%}
+
+<center>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Name</label>
+        <input type="text" name="username" placeholder="UserName" id="" class="input">
+        
+        <br><br>
+        
+        <label for="">Emailid</label>
+        <input type="text" name="user_Emailid" placeholder="Email id" id="">
+        
+        <br><br>
+        
+        <label for="">Password</label>
+        <input type="text" name="password" placeholder="Password" id="">
+        <br>
+        <br>
+        <input type="submit" name="" id="">
+    </form>
+</center>
+
+
+
+
+    <br><br><br>
+
+    <table align="center" border="1" width="50%" class="m-auto table">
+        <tr>
+            <td>Name</td>
+            <td>UserName</td>
+            <td>Password</td>
+            <td>Action</td>
+        </tr>
+
+        <tr>
+
+        {% for i in user%}
+        </tr>
+            <td class="border">{{i.username}}</td>
+            <td class="border">{{i.user_Emailid}}</td>
+            <td class="border">{{i.password}}</td>
+            <td class="border">
+                <a href="UserDelete/{{i.id}}" class="btn btn-danger">Delete</a> 
+                &nbsp; 
+                <a href={% url 'UserDelete' i.id  %} class="btn btn-danger">Delete 2 url Name Pattern</a>
+                <a href={% url 'UserUpdate' i.id  %} class="btn btn-success">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+</body>
+</html>
+
+
+{% include "footer.html"%}

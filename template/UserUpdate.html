@@ -1,0 +1,40 @@
+
+
+
+{% include "head.html"%}
+
+<center>
+    <br>
+    <h1> User Update Area</h1>
+    <br><br><br><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">Id</label>
+        <input type="text" name="id" value="{{onedata.id}}" placeholder="UserName" id="" class="input" disabled>
+        
+        <br><br>
+       
+
+        <label for="">Name</label>
+        <input type="text" name="username" value="{{onedata.username}}" placeholder="UserName" id="" class="input">
+        
+        <br><br>
+        
+        <label for="">Emailid</label>
+        <input type="text" name="user_Emailid" value="{{onedata.user_Emailid}}" placeholder="Email id" id="">
+        
+        <br><br>
+        
+        <label for="">Password</label>
+        <input type="password" name="password" value="{{onedata.password}}" placeholder="Password" id="">
+        <br>
+        <br>
+        <input type="submit" value="Data Update" id="">
+    </form>
+</center>
+
+
+
+
+{% include "footer.html"%}
